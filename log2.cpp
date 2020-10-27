@@ -76,12 +76,8 @@ TEST_CASE("Log2ceil") {
     // Test 1..2^30-1
     #pragma omp parallel for default(none)
     for (int i = 0; i < 0x40; i++) {
-        for (uint32_t j = 0; j <= 0x100'0000; j++) {
+        for (uint32_t j = (i > 0) ? 0 : 1; j <= 0x100'0000; j++) {
             auto val = (uint32_t) (i << 24 | j);
-
-            if (val == 0) {
-                continue;
-            }
 
             CHECK_EQ(Log2ceil(val), (int) ceil(log2(val)));
         }

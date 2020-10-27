@@ -6,6 +6,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(LIBRARY_SRC
         log2.cpp
         log2.hpp
+        rsqrt.cpp
+        rsqrt.hpp
         sin_cos.cpp
         sin_cos.hpp
         sqrt.cpp
