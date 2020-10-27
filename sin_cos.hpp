@@ -10,15 +10,15 @@
 #define SIN_TABLE_BITS 6
 
 #if SIN_TABLE_BITS == 5
-extern const int16_t sin_table[33];
+extern const uint16_t sin_table[33];
 #endif
 
 #if SIN_TABLE_BITS == 6
-extern const int16_t sin_table[65];
+extern const uint16_t sin_table[65];
 #endif
 
 #if SIN_TABLE_BITS == 7
-extern const int16_t sin_table[129];
+extern const uint16_t sin_table[129];
 #endif
 
 constexpr int sin_table_size = (1 << SIN_TABLE_BITS) + 1;
