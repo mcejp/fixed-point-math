@@ -19,7 +19,7 @@
 //
 // Having established these bounds, we can proceed using the method of interval halving, which generates approximately
 // 1 bit of precision per iteration.
-// On every iteration, we check if x * y_estimate**2 - 1 is lower or greater than 0, and we adjust the bounds correspondingly.
+// On every iteration, we check if x * y_estimate**2 is lower or greater than 1, and we adjust the bounds correspondingly.
 //
 // We have to watch out for integer overflow, because the naive calculation of X * Y_est**2 would generate values up to
 //   2**n * 2**(ceil(-floor(n) / 2)) * 2**(ceil(-floor(n) / 2)) * 2**(3*F), or
