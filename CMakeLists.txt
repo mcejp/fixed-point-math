@@ -8,6 +8,8 @@ set(LIBRARY_SRC
         log2.hpp
         rsqrt.cpp
         rsqrt.hpp
+        rsqrt_table.cpp
+        rsqrt_table.hpp
         sin_cos.cpp
         sin_cos.hpp
         sqrt.cpp

@@ -53,8 +53,8 @@ const uint16_t sin_table[129] = {
 
 static void DemoSin(int32_t i) {
     auto got = Sin<12, int32_t>(i);
-    auto exp = Sin<12, int32_t>(i * M_PI / 2048.0f) * 4096.0f;
-//    printf("Sin<12, int32_t>(%4d) = %5d (vs %7.2f)\n", i, got, exp);
+    auto exp = sin(i * M_PI / 2048.0f) * 4096.0f;
+//    printf("sin(%4d) = %5d (vs %7.2f)\n", i, got, exp);
     printf("CHECK_EQ(Sin<12, int32_t>(%4d), %5d);\n", i, got);
 }
 
@@ -144,7 +144,7 @@ TEST_CASE("Sin<12, int32_t>(int32_t)") {
 
     for (int i = 0; i < 4096; i++) {
         auto get = Sin<12, int32_t>(i);
-        auto exp = Sin<12, int32_t>(i * M_PI / 2048.0f) * 4096.0f;
+        auto exp = cos(i * M_PI / 2048.0f) * 4096.0f;
 
         total_bias += get - exp;
         total_error += fabs(get - exp);
@@ -156,8 +156,8 @@ TEST_CASE("Sin<12, int32_t>(int32_t)") {
 
 static void DemoCos(int32_t i) {
     auto got = Cos<12, int32_t>(i);
-    auto exp = Cos<12, int32_t>(i * M_PI / 2048.0f) * 4096.0f;
-//    printf("Cos<12, int32_t>(%4d) = %5d (vs %7.2f)\n", i, got, exp);
+    auto exp = cos(i * M_PI / 2048.0f) * 4096.0f;
+//    printf("cos(%4d) = %5d (vs %7.2f)\n", i, got, exp);
     printf("CHECK_EQ(Cos<12, int32_t>(%4d), %5d);\n", i, got);
 }
 
@@ -247,7 +247,7 @@ TEST_CASE("Cos<12, int32_t>(int32_t)") {
 
     for (int i = 0; i < 4096; i++) {
         auto get = Cos<12, int32_t>(i);
-        auto exp = Cos<12, int32_t>(i * M_PI / 2048.0f) * 4096.0f;
+        auto exp = cos(i * M_PI / 2048.0f) * 4096.0f;
 
         total_bias += get - exp;
         total_error += fabs(get - exp);
