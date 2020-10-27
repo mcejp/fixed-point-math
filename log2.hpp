@@ -4,5 +4,6 @@
 #include <stdint.h>
 
 int Log2floor(uint32_t v);
+int Log2ceil(uint32_t v);
 
 #endif
