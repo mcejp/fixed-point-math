@@ -25,6 +25,7 @@ constexpr int sin_table_size = (1 << SIN_TABLE_BITS) + 1;
 constexpr int index_mask = (1 << SIN_TABLE_BITS) - 1;
 
 // Input bit width is configurable, output is currently fixed at 1+12 bits (range of +/- 0x1000)
+// Tabulated values are interpolated linearly, so a table of 2**6 entries already gives good results.
 
 template <int angle_bits, typename Angle_t>
 int32_t Sin(Angle_t angle) {
